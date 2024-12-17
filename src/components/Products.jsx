@@ -12,7 +12,10 @@ function Products() {
             const res = await getProducts('?limit=190')
             return res.data.products
         },
-        staleTime:10000,
+        // staleTime:10000,
+        // refetchInterval:1000,
+        refetchIntervalInBackground:1000,
+        refetchOnWindowFocus:true 
     });
 
     if (isPending) {
